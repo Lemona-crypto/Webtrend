@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>추운 겨울에는 군고구마가 좋아? 붕어빵이 좋아?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        h1 {
+            margin: 20px 0;
+        }
+        .vote-container {
+            margin: 20px auto;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>추운 겨울에는 군고구마가 좋아? 붕어빵이 좋아?</h1>
+    <div class="vote-container">
+        <button id="sweetPotatoBtn">군고구마</button>
+        <button id="fishBreadBtn">붕어빵</button>
+    </div>
+    <p id="result" style="font-size: 18px; margin-top: 20px;"></p>
+
+    <script>
+        let sweetPotatoVotes = 0;
+        let fishBreadVotes = 0;
+
+        document.getElementById('sweetPotatoBtn').addEventListener('click', () => {
+            sweetPotatoVotes++;
+            updateResult();
+        });
+
+        document.getElementById('fishBreadBtn').addEventListener('click', () => {
+            fishBreadVotes++;
+            updateResult();
+        });
+
+        function updateResult() {
+            document.getElementById('result').innerText = `군고구마: ${sweetPotatoVotes}표, 붕어빵: ${fishBreadVotes}표`;
+        }
+    </script>
+</body>
+</html>
